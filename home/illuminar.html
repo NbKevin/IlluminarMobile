@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title>Illuminar</title>
+    <link href="../scripts/vendor/jquery.mobile-1.4.5.min.css" rel="stylesheet"/>
+    <script src="../scripts/vendor/jquery-1.8.3.min.js" type="application/javascript"></script>
+    <script src="../scripts/vendor/jquery.mobile-1.4.5.min.js" type="application/javascript"></script>
+    <script src="../scripts/api.js" type="application/javascript"></script>
+    <style type="text/css">
+        @media only screen and (min-width: 600px) {
+            .ui-page {
+                width: 640px !important;
+                margin: 0 auto !important;
+                position: relative !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" id="search">
+    <div data-role="header">
+        <h1>Search the Lofter</h1>
+    </div>
+
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="tag">Tag</label>
+            <input type="text" name="tag" id="tag">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <a data-role="button" onclick="fireSearch()" data-transition="slide">Search</a>
+    </div>
+
+    <div data-role="footer">
+        <h1>Powered by JQuery, JQuery Mobile and Typescript.</h1>
+    </div>
+</div>
+<div data-role="page" id="result">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">Back</a>
+
+        <h1 id="search-header">Search Result</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" id="result-list" data-inset="true">
+        </ul>
+    </div>
+    <div data-role="footer">
+        <h1>Powered by JQuery, JQuery Mobile and Typescript.</h1>
+    </div>
+</div>
+<div data-role="page" id="post">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">Back</a>
+
+        <h1 id="post-title"></h1>
+    </div>
+
+    <div data-role="content">
+        <p id="post-content"></p>
+        <a data-role="button" id="view-on-lofter-bottom">View on Lofter</a>
+        <a href="#" data-role="button" onclick="$('html').animate({scrollTop: 0});">Back to Top</a>
+    </div>
+
+    <div data-role="footer">
+        <h1>Powered by JQuery, JQuery Mobile and Typescript.</h1>
+    </div>
+</div>
+</body>
+</html>
